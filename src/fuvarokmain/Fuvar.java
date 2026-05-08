@@ -10,9 +10,10 @@ package fuvarokmain;
  */
 public class Fuvar {
     private String rsz, fm;
-    private int ido, osszeg;
+    private int ido;
+    private double osszeg;
 
-    public Fuvar(String rsz, String fm, int ido, int osszeg) {
+    public Fuvar(String rsz, String fm, int ido, double osszeg) {
         this.rsz = rsz;
         this.fm = fm;
         this.ido = ido;
@@ -31,7 +32,7 @@ public class Fuvar {
         return ido;
     }
 
-    public int getOsszeg() {
+    public double getOsszeg() {
         return osszeg;
     }
 

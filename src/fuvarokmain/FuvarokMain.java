@@ -19,15 +19,27 @@ public class FuvarokMain {
        //System.out.println(tartalom);
        List<String> sorok = Files.readAllLines(path);
        
-        for (String sor : sorok) {
-            String s[] = sor.split(",");
+        for (int i = 1; i < sorok.size(); i++) {
+            String s[] = sorok.get(i).split(",");
             int ido = Integer.parseInt(s[1]);
-            int osszeg = Integer.parseInt(s[2]);
+            double osszeg = Integer.parseInt(s[2]);
             Fuvar f = new Fuvar(s[0], s[3], ido, osszeg);
             fuvarok.add(f);
         }
         
+        feladat1();
         
+        
+        
+    }// main
+
+    private static int feladat1() {
+        //System.out.println(fuvarok.get(0));
+        int osszErtek = 0;
+        for (Fuvar f : fuvarok) {
+            osszErtek += f.getOsszeg();
+        }
+        return osszErtek;
     }
     
 }
